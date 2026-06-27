@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan & Dukungan | Wheelix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+               <a href="index.html" class="wheelix-logo">
+                    <img src="assets/logo.png" alt="Wheelix Logo" class="logo-img">
+                    <span class="logo-text">WHEELIX</span>
+               </a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Beranda</a>
+                <a href="shop.html" class="nav-link">Belanja</a>
+                <a href="support.html" class="nav-link active">Layanan & Dukungan</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- SUPPORT PAGE CONTENT -->
+    <section class="support-page">
+        <!-- Hero Banner -->
+        <div class="support-hero">
+            <h1>Layanan & Dukungan</h1>
+            <p>Kami siap membantu Anda di setiap langkah.</p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="support-quick-actions">
+            <div class="support-action-card">
+                <div class="support-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3>Jadwalkan Servis</h3>
+                <p>Pesan janji servis Anda secara online dengan dealer pilihan Anda.</p>
+                <a href="#" class="support-link">Jadwalkan Sekarang <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="support-action-card">
+                <div class="support-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Hubungi Kami</h3>
+                <p>Hubungi tim dukungan pelanggan kami untuk pertanyaan apa pun.</p>
+                <a href="#" class="support-link">Hubungi Kami <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="support-action-card">
+                <div class="support-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Cari Dealer</h3>
+                <p>Temukan dealer Wheelix terdekat untuk penjualan, servis, dan suku cadang.</p>
+                <a href="#" class="support-link">Cari Dealer <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="support-action-card">
+                <div class="support-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Buku Manual Pemilik</h3>
+                <p>Akses manual, panduan, dan informasi garansi untuk kendaraan Anda.</p>
+                <a href="#" class="support-link">Lihat Manual <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="support-faq">
+            <h2>Pertanyaan yang Sering Diajukan</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Bagaimana cara menjadwalkan janji servis?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Anda dapat menjadwalkan janji servis secara online melalui alat Jadwalkan Servis kami, dengan menghubungi dealer Wheelix lokal Anda, atau menggunakan aplikasi Wheelix. Kami merekomendasikan perawatan rutin untuk menjaga kendaraan Anda dalam kondisi prima.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Apa itu WheelixCare?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>WheelixCare adalah rencana perawatan tanpa biaya yang disertakan dengan setiap Wheelix baru. Ini mencakup perawatan terjadwal pabrik normal selama 2 tahun atau 25.000 mil, mana yang lebih dulu. Ini juga mencakup bantuan pinggir jalan 24 jam selama 2 tahun tanpa batasan jarak tempuh.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Bagaimana cara memeriksa penarikan keselamatan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Anda dapat memeriksa penarikan terbuka pada kendaraan Anda dengan memasukkan VIN (Nomor Identifikasi Kendaraan) Anda di halaman Penarikan Keselamatan kami. Jika ditemukan penarikan, hubungi dealer Wheelix terdekat untuk menjadwalkan perbaikan gratis.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Apa saja yang dicakup garansi saya?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Garansi dasar Wheelix mencakup 3 tahun/36.000 mil. Garansi powertrain mencakup 5 tahun/60.000 mil. Cakupan baterai hibrida diperpanjang hingga 10 tahun/150.000 mil. Periksa Buku Manual Pemilik Anda untuk detail garansi lengkap.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Bagaimana cara mengelola pembayaran Wheelix Financial Services saya?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Anda dapat mengelola pembayaran melalui situs web atau aplikasi Wheelix Financial Services. Atur Pembayaran Otomatis, lihat saldo Anda, lakukan pembayaran satu kali, dan perbarui informasi pembayaran Anda di satu tempat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Topics -->
+        <div class="support-topics">
+            <h2>Topik Populer</h2>
+            <div class="topics-grid">
+                <a href="#" class="topic-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Penarikan Keselamatan & Kampanye Servis</span>
+                </a>
+                <a href="#" class="topic-card">
+                    <i class="fas fa-tools"></i>
+                    <span>Pusat Servis</span>
+                </a>
+                <a href="#" class="topic-card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Lampu Peringatan</span>
+                </a>
+                <a href="#" class="topic-card">
+                    <i class="fas fa-headset"></i>
+                    <span>Pusat Keselamatan</span>
+                </a>
+                <a href="#" class="topic-card">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Kelola Pembayaran</span>
+                </a>
+                <a href="#" class="topic-card">
+                    <i class="fas fa-key"></i>
+                    <span>Sewa Wheelix</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="logo">
+               <a href="index.html" class="wheelix-logo">
+                    <img src="assets/logo.png" alt="Wheelix Logo" class="logo-img">
+                    <span class="logo-text">WHEELIX</span>
+               </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

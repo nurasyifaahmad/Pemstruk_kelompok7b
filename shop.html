@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belanja | Kendaraan Wheelix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        .shop-card {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Mencegah gambar keluar dari batas card */
+        }
+        .shop-card-img {
+            position: relative;
+            width: 100%;
+            height: 200px; /* Mengunci tinggi area gambar */
+            background-color: #f4f4f4; /* Warna latar jika gambar lambat dimuat */
+        }
+        .shop-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Membuat gambar memenuhi area tanpa mengubah proporsinya */
+        }
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2; /* Memastikan label 'Baru', 'Listrik', dll tetap di atas gambar */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+               <a href="index.html" class="wheelix-logo">
+                    <img src="assets/logo.png" alt="Wheelix Logo" class="logo-img">
+                    <span class="logo-text">WHEELIX</span>
+               </a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Beranda</a>
+                <a href="shop.html" class="nav-link active">Belanja</a>
+                <a href="support.html" class="nav-link">Layanan & Dukungan</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="shop-page">
+        <div class="shop-header">
+            <h1>Kendaraan Wheelix</h1>
+            <p class="shop-subtitle"><strong>12</strong> Hasil Tersedia</p>
+        </div>
+
+        <div class="shop-layout">
+            <aside class="shop-sidebar">
+                <div class="filter-group">
+                    <h3 class="filter-title">Filter by Tipe Kendaraan</h3>
+                    <label class="filter-option"><input type="checkbox" name="tipe" value="semua" checked onchange="filterKendaraan()"> Semua</label>
+                    <label class="filter-option"><input type="checkbox" name="tipe" value="supercar" onchange="filterKendaraan()"> Supercar</label>
+                    <label class="filter-option"><input type="checkbox" name="tipe" value="hypercar" onchange="filterKendaraan()"> Hypercar</label>
+                    <label class="filter-option"><input type="checkbox" name="tipe" value="mobil-listrik" onchange="filterKendaraan()"> Mobil Listrik</label>
+                </div>
+                <div class="filter-group">
+                    <h3 class="filter-title">Filter by Harga</h3>
+                    <label class="filter-option"><input type="checkbox" name="harga" value="0-1" onchange="filterKendaraan()"> Di bawah Rp 1 Miliar</label>
+                    <label class="filter-option"><input type="checkbox" name="harga" value="1-3" onchange="filterKendaraan()"> Rp 1 - Rp 3 Miliar</label>
+                    <label class="filter-option"><input type="checkbox" name="harga" value="3-10" onchange="filterKendaraan()"> Rp 3 - Rp 10 Miliar</label>
+                    <label class="filter-option"><input type="checkbox" name="harga" value="10-999" onchange="filterKendaraan()"> Di atas Rp 10 Miliar</label>
+                </div>
+            </aside>
+
+            <div class="shop-grid" id="shopGrid">
+                <!-- Supercar -->
+                <div class="shop-card" data-tipe="supercar" data-harga="6000" data-speed="325" data-year="2024">
+                    <div class="shop-card-img">
+                        <img src="assets/lamborghini/lamborghini (5).jpg" alt="Lamborghini Huracán">
+                        <span class="card-badge">Baru</span>
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>Lamborghini Huracán</h3>
+                        <p class="shop-price">Mulai dari Rp 6.000.000.000</p>
+                        <p class="shop-mpg">Kecepatan Maksimum 325 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-tipe="supercar" data-harga="2413" data-speed="315" data-year="2024">
+                    <div class="shop-card-img">
+                        <img src="assets/porsche/porsche (8).jpg" alt="Porsche 911 GT3 RS">
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>Porsche 911 GT3 RS</h3>
+                        <p class="shop-price">Mulai dari Rp 2.413.000.000</p>
+                        <p class="shop-mpg">Kecepatan Maksimum 315 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-tipe="supercar" data-harga="24378" data-speed="367" data-year="2023">
+                    <div class="shop-card-img">
+                        <img src="https://i.pinimg.com/1200x/b4/ae/b7/b4aeb7367a403cb47c565049597126fe.jpg" alt="Ferrari F40">
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>Ferrari F40</h3>
+                        <p class="shop-price">Mulai dari Rp 24.378.480.000</p>
+                        <p class="shop-mpg">Kecepatan Maksimum 367 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-tipe="supercar" data-harga="8500" data-speed="340" data-year="2024">
+                    <div class="shop-card-img">
+                        <img src="assets/mclaren/mclaren (1).jpg" alt="McLaren 720S">
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>McLaren 720S</h3>
+                        <p class="shop-price">Mulai dari Rp 8.500.000.000</p>
+                        <p class="shop-mpg">Kecepatan Maksimum 340 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-tipe="supercar" data-harga="7200" data-speed="330" data-year="2023">
+                    <div class="shop-card-img">
+                        <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/103/MTA-177892320/autoart_1-18_autoart_lamborghini_aventador_svj_pearl_orange_full02_t2kfw2mv.jpg" alt="Lamborghini Aventador">
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>Lamborghini Aventador SVJ</h3>
+                        <p class="shop-price">Mulai dari Rp 7.200.000.000</p>
+                        <p class="shop-mpg">Kecepatan Maksimum 350 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hypercar -->
+                <div class="shop-card" data-tipe="hypercar" data-harga="40000" data-speed="420" data-year="2024">
+                    <div class="shop-card-img">
+                        <img src="assets/bugatti-chiron/bugatti3.jpg" alt="Bugatti Chiron">
+                        <span class="card-badge">Baru</span>
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>Bugatti Chiron</h3>
+                        <p class="shop-price">Mulai dari Rp 40.000.000.000</p>
+                        <p class="shop-mpg">Kecepatan Maksimum 420 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-tipe="hypercar" data-harga="55000" data-speed="350" data-year="2023">
+                    <div class="shop-card-img">
+                        <img src="assets/ferrarri/ferrarri4.jpg" alt="Ferrari LaFerrari">
+                        <span class="card-badge badge-green">Hybrid</span>
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>Ferrari LaFerrari</h3>
+                        <p class="shop-price">Mulai dari Rp 55.000.000.000</p>
+                        <p class="shop-mpg">Kecepatan Maksimum 350 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-tipe="hypercar" data-harga="22150" data-speed="350" data-year="2023">
+                    <div class="shop-card-img">
+                        <img src="assets/mclaren/mclaren (2).jpg" alt="McLaren P1">
+                        <span class="card-badge badge-orange">Eksklusif</span>
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>McLaren P1</h3>
+                        <!-- <p class="shop-price">Mulai dari Rp 22.150.000.000</p> -->
+                        <p class="shop-mpg">Kecepatan Maksimum 350 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-tipe="hypercar" data-harga="102378" data-speed="380" data-year="2024">
+                    <div class="shop-card-img">
+                        <img src="assets/pagani-huayra/pagani-huayra.jpg" alt="Pagani Huayra">
+                        <span class="card-badge">Baru</span>
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>Pagani Huayra</h3>
+                        <p class="shop-price">Mulai dari Rp 102.378.480.000</p>
+                        <p class="shop-mpg">Kecepatan Maksimum 380 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-tipe="hypercar" data-harga="34700" data-speed="400" data-year="2024">
+                    <div class="shop-card-img">
+                        <img src="https://www.thedrive.com/wp-content/uploads/content-b/message-editor/1583246186383-8a79c1e5a6cc70c1_800x800ar.jpg" alt="Koenigsegg Gemera">
+                        <span class="card-badge badge-green">Hybrid</span>
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>Koenigsegg Gemera</h3>
+                        <p class="shop-price">Mulai dari Rp 34.700.000.000</p>
+                        <p class="shop-mpg">Kecepatan Maksimum 400 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-tipe="hypercar" data-harga="45000" data-speed="410" data-year="2023">
+                    <div class="shop-card-img">
+                        <img src="https://imageio.forbes.com/specials-images/imageserve/6971763b6b90bff61523a3a1/BUGATTI-Solitaire-Hommage-Front/0x0.jpg?width=960&dpr=1.5" alt="Bugatti Veyron">
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>Bugatti Veyron</h3>
+                        <p class="shop-price">Mulai dari Rp 45.000.000.000</p>
+                        <p class="shop-mpg">Kecepatan Maksimum 410 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobil Listrik -->
+                <div class="shop-card" data-tipe="mobil-listrik" data-harga="32200" data-speed="400" data-year="2024">
+                    <div class="shop-card-img">
+                        <img src="https://hips.hearstapps.com/hmg-prod/images/2025-rimac-nevera-pr-101-691b428773e01.jpg?crop=0.780xw:0.656xh;0.175xw,0.344xh&resize=1200:*" alt="Rimac Nevera">
+                        <span class="card-badge badge-green">Listrik</span>
+                    </div>
+                    <div class="shop-card-info">
+                        <h3>Rimac Nevera</h3>
+                        <p class="shop-price">Mulai dari Rp 32.200.000.000</p>
+                        <p class="shop-mpg">Kecepatan Maksimum 400 km/jam</p>
+                        <div class="shop-card-actions">
+                            <a href="detail.html" class="btn-build-sm">Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="logo">
+               <a href="index.html" class="wheelix-logo">
+                    <img src="assets/logo.png" alt="Wheelix Logo" class="logo-img">
+                    <span class="logo-text">WHEELIX</span>
+               </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    function filterKendaraan() {
+        const cards = document.querySelectorAll('.shop-card');
+        const grid = document.getElementById('shopGrid');
+        const tipeCheckboxes = document.querySelectorAll('input[name="tipe"]:checked');
+        const hargaCheckboxes = document.querySelectorAll('input[name="harga"]:checked');
+
+        // Ambil nilai tipe yang dipilih
+        const selectedTipes = Array.from(tipeCheckboxes).map(cb => cb.value);
+        const isSemua = selectedTipes.includes('semua');
+
+        // Ambil range harga yang dipilih
+        const selectedHargas = Array.from(hargaCheckboxes).map(cb => cb.value);
+
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const cardTipe = card.dataset.tipe;
+            const cardHarga = parseInt(card.dataset.harga); // dalam juta
+
+            // Filter tipe
+            let matchTipe = isSemua || selectedTipes.length === 0 || selectedTipes.includes(cardTipe);
+
+            // Filter harga
+            let matchHarga = selectedHargas.length === 0;
+            if (!matchHarga) {
+                selectedHargas.forEach(range => {
+                    const [min, max] = range.split('-').map(Number);
+                    const maxVal = max === 999 ? Infinity : max * 1000;
+                    const minVal = min * 1000;
+                    if (cardHarga >= minVal && cardHarga < maxVal) {
+                        matchHarga = true;
+                    }
+                });
+            }
+
+            // Tampilkan atau sembunyikan
+            if (matchTipe && matchHarga) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Update jumlah hasil
+        document.querySelector('.shop-subtitle strong').textContent = visibleCount;
+
+        // Jika tidak ada hasil
+        let noResult = document.getElementById('noResult');
+        if (visibleCount === 0) {
+            if (!noResult) {
+                noResult = document.createElement('div');
+                noResult.id = 'noResult';
+                noResult.style.cssText = 'grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #888; font-size: 18px;';
+                noResult.innerHTML = '<i class="fas fa-car" style="font-size: 48px; margin-bottom: 15px; display: block; color: #ccc;"></i>Tidak ada kendaraan yang cocok dengan filter yang dipilih.';
+                grid.appendChild(noResult);
+            }
+        } else if (noResult) {
+            noResult.remove();
+        }
+    }
+    </script>
+</body>
+</html>

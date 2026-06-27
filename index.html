@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheelix | Temukan Kendaraan Impian Anda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+               <a href="index.html" class="wheelix-logo">
+                    <img src="assets/logo.png" alt="Wheelix Logo" class="logo-img">
+                    <span class="logo-text">WHEELIX</span>
+               </a>
+            </div>  
+
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">Beranda</a>
+                <a href="shop.html" class="nav-link">Belanja</a>
+                <a href="support.html" class="nav-link">Layanan & Dukungan</a>
+            </nav>
+
+
+        </div>
+    </header>
+
+    <!-- HERO CAROUSEL -->
+    <section class="hero-carousel">
+        <div class="carousel-slides">
+
+            <!-- Slide 1 -->
+            <div class="carousel-slide active" id="slide1">
+                <div class="slide-bg" style="background: linear-gradient(135deg, #1a3a1a 0%, #2d5a2d 30%, #4a7a3a 60%, #3d6b3d 100%);">
+                    <div class="car-silhouette">
+                        <div class="car-body"></div>
+                    </div>
+                </div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1 class="slide-title">Bugatti Chiron</h1>
+                    <p class="slide-tagline">Seni dalam Kecepatan Ekstrem.</p>
+                    <button class="btn-learn-more">Lihat Detail</button>
+                </div>
+                <div class="slide-image-container">
+                    <img src="assets/bugatti-chiron/bugatti3.jpg" alt="Bugatti Chiron" class="slide-image" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-slide" id="slide2">
+                <div class="slide-bg" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+                </div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1 class="slide-title">Ferrari LaFerrari</h1>
+                    <p class="slide-tagline">Tak Ada Lagi yang Perlu Dikatakan. Inilah LaFerrari.</p>
+                    <button class="btn-learn-more">Lihat Detail</button>
+                </div>
+                <div class="slide-image-container">
+                    <img src="assets/ferrarri/ferrarri2.jpg" alt="Ferrari LaFerrari" class="slide-image" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-slide" id="slide3">
+                <div class="slide-bg" style="background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);">
+                </div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1 class="slide-title">Porsche 911</h1>
+                    <p class="slide-tagline">Ikon Abadi, Performa Tanpa Kompromi.</p>
+                    <button class="btn-learn-more">Lihat Detail</button>
+                </div>
+                <div class="slide-image-container">
+                    <img src="assets/porsche/porsche (8).jpg" alt="Porsche 911" class="slide-image" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-btn carousel-prev" onclick="prevSlide()">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn carousel-next" onclick="nextSlide()">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Pause Button -->
+        <button class="carousel-pause" onclick="toggleAutoplay()">
+            <i class="fas fa-pause" id="pauseIcon"></i>
+        </button>
+
+        <!-- Dot Navigation -->
+        <!-- <div class="carousel-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+        </div> -->
+    </section>
+
+    <!-- EXPLORE ALL VEHICLES -->
+    <section class="explore-vehicles">
+        <h3 class="section-title">Temukan Kendaraan Impian Anda</h3>
+        <div class="vehicle-tabs">
+            <button class="tab-btn active" onclick="filterIndexKendaraan('supercar', this)">Supercar</button>
+            <button class="tab-btn" onclick="filterIndexKendaraan('hypercar', this)">Hypercar</button>
+            <button class="tab-btn" onclick="filterIndexKendaraan('mobil-listrik', this)">Mobil Listrik</button>
+        </div>
+        <div class="vehicle-cards" id="vehicleCards">
+            <!-- Supercar -->
+            <div class="vehicle-card" data-tipe="supercar">
+                <div class="vehicle-card-img" style="background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);">
+                     <div class="vehicle-card-img">
+                        <img src="assets/lamborghini/lamborghini (5).jpg" alt="Lamborghini Huracán">
+                    </div>
+                </div>
+                <div class="vehicle-card-info">
+                    <h3>Lamborghini Huracán</h3>
+                    <p class="vehicle-price">Mulai dari Rp 6.000.000.000</p>
+                    <p class="vehicle-speed">Kecepatan Maksimum 325 km/jam</p>
+                    <div class="vehicle-card-actions">
+                        <a href="detail.html" class="btn-build-sm">Detail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="vehicle-card" data-tipe="supercar">
+                <div class="vehicle-card-img" style="background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);">
+                    <div class="vehicle-card-img">
+                        <img src="assets/porsche/porsche (8).jpg" alt="Porsche 911 GT3 RS">
+                    </div>
+                </div>
+                <div class="vehicle-card-info">
+                    <h3>Porsche 911 GT3 RS</h3>
+                    <p class="vehicle-price">Mulai dari Rp 2.413.000.000</p>
+                    <p class="vehicle-speed">Kecepatan Maksimum 315 km/jam</p>
+                    <div class="vehicle-card-actions">
+                        <a href="detail.html" class="btn-build-sm">Detail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="vehicle-card" data-tipe="supercar">
+                <div class="vehicle-card-img" style="background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);">
+                    <div class="vehicle-card-img">
+                        <img src="assets/mclaren/mclaren (1).jpg" alt="McLaren 720S">
+                    </div>
+                </div>
+                <div class="vehicle-card-info">
+                    <h3>McLaren 720S</h3>
+                    <p class="vehicle-price">Mulai dari Rp 8.500.000.000</p>
+                    <p class="vehicle-speed">Kecepatan Maksimum 340 km/jam</p>
+                    <div class="vehicle-card-actions">
+                        <a href="detail.html" class="btn-build-sm">Detail</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hypercar -->
+            <div class="vehicle-card" data-tipe="hypercar" style="display:none;">
+                <div class="vehicle-card-img" style="background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);">
+                    <div class="vehicle-card-img">
+                        <img src="assets/bugatti-chiron/bugatti3.jpg" alt="Bugatti Chiron">
+                    </div>
+                </div>
+                <div class="vehicle-card-info">
+                    <h3>Bugatti Chiron</h3>
+                    <p class="vehicle-price">Mulai dari Rp 40.000.000.000</p>
+                    <p class="vehicle-speed">Kecepatan Maksimum 420 km/jam</p>
+                    <div class="vehicle-card-actions">
+                        <a href="detail.html" class="btn-build-sm">Detail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="vehicle-card" data-tipe="hypercar" style="display:none;">
+                <div class="vehicle-card-img" style="background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);">
+                    <div class="vehicle-card-img">
+                        <img src="assets/ferrarri/ferrarri4.jpg" alt="Ferrari LaFerrari">
+                    </div>
+                </div>
+                <div class="vehicle-card-info">
+                    <h3>Ferrari LaFerrari</h3>
+                    <p class="vehicle-price">Mulai dari Rp 55.000.000.000</p>
+                    <p class="vehicle-speed">Kecepatan Maksimum 350 km/jam</p>
+                    <div class="vehicle-card-actions">
+                        <a href="detail.html" class="btn-build-sm">Detail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="vehicle-card" data-tipe="hypercar" style="display:none;">
+                <div class="vehicle-card-img" style="background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);">
+                    <div class="vehicle-card-img">
+                        <img src="assets/pagani-huayra/pagani-huayra.jpg" alt="Pagani Huayra">
+                    </div>
+                </div>
+                <div class="vehicle-card-info">
+                    <h3>Pagani Huayra</h3>
+                    <p class="vehicle-price">Mulai dari Rp 102.378.480.000</p>
+                    <p class="vehicle-speed">Kecepatan Maksimum 383 km/jam</p>
+                    <div class="vehicle-card-actions">
+                        <a href="detail.html" class="btn-build-sm">Detail</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobil Listrik -->
+            <div class="vehicle-card" data-tipe="mobil-listrik" style="display:none;">
+                <div class="vehicle-card-img" style="background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);">
+                    <div class="vehicle-card-img">
+                        <img src="https://hips.hearstapps.com/hmg-prod/images/2025-rimac-nevera-pr-101-691b428773e01.jpg?crop=0.780xw:0.656xh;0.175xw,0.344xh&resize=1200:*" alt="Rimac Nevera">
+                    </div>
+                </div>
+                <div class="vehicle-card-info">
+                    <h3>Rimac Nevera</h3>
+                    <p class="vehicle-price">Mulai dari Rp 32.200.000.000</p>
+                    <p class="vehicle-speed">Kecepatan Maksimum 400 km/jam</p>
+                    <div class="vehicle-card-actions">
+                        <a href="detail.html" class="btn-build-sm">Detail</a>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        
+    </section>
+
+    <!-- VEHICLE LINEUP HERO -->
+    <section class="lineup-hero">
+        <div class="lineup-bg">
+            <img src="https://i.pinimg.com/1200x/28/fc/a7/28fca74ebb12af36f888e93b547a4bd1.jpg" alt="Scenic sunset" class="lineup-bg-img" onerror="this.parentElement.style.background='linear-gradient(180deg, #f4a460 0%, #cd853f 30%, #8b7355 60%, #6b8e7b 100%)'">
+        </div>
+        <div class="lineup-overlay"></div>
+        <div class="lineup-content">
+            <h2 class="lineup-title">Kecepatan, Kemewahan, dan Inovasi dalam Satu Garasi.</h2>
+            <a href="shop.html" class="btn-explore">Jelajahi Lebih Banyak Mobil</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Wheelix Logo" class="footer-logo-img">
+                <span>WHEELIX</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    function filterIndexKendaraan(tipe, btn) {
+        // Update active tab
+        document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter cards
+        const cards = document.querySelectorAll('#vehicleCards .vehicle-card');
+        cards.forEach(card => {
+            if (card.dataset.tipe === tipe) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    </script>
+</body>
+</html>
